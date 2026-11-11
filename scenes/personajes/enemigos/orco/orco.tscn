@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bxfmsymnx5lor"]
+
+[ext_resource type="SpriteFrames" uid="uid://simlnlo4dvri" path="res://scenes/personajes/enemigos/orco/sprite_frames_orco.tres" id="1_7lma3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlnm4"]
+size = Vector2(28, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1amwh"]
+size = Vector2(28, 29)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1885225143]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75693476]
+sprite_frames = ExtResource("1_7lma3")
+animation = &"muer_S"
+frame = 4
+frame_progress = 0.7787174
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557094745]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_xlnm4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=477704914]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1182513653]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_1amwh")
