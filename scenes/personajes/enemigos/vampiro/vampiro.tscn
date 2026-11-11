@@ -9,7 +9,7 @@ size = Vector2(22, 36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60pne"]
 size = Vector2(22, 36)
 
-[node name="enemigo" unique_id=201571986 instance=ExtResource("1_wd2d5")]
+[node name="Vampiro" unique_id=201571986 instance=ExtResource("1_wd2d5")]
 velocidad_base = 240.0
 vida_base = 50.0
 animaciones = ExtResource("2_0kllh")

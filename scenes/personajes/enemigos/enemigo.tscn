@@ -20,14 +20,6 @@ corner_radius_bottom_left = 4
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_duewo")
-velocidad_base = null
-vida_base = null
-prefijo_movimiento = null
-prefijo_muerte = null
-prefijo_ataque = null
-dano = null
-alcance_ataque = null
-intervalo_ataque = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1882333181]
 
