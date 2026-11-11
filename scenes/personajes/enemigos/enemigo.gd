@@ -32,7 +32,7 @@ enum Orientacion {
 }
 
 @export_group("Atributos")
-@export var velocidad_base: float = 120.0
+@export var velocidad_base: float = 100.0
 @export var vida_base: float = 100.0
 @export var comportamiento: Comportamiento = Comportamiento.NORMAL
 @export_group("Animaciones")

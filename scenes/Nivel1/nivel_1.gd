@@ -7,14 +7,12 @@ func _ready() -> void:
 
 	add_child(vampiro)
 
-	vampiro.global_position = Vector2(1100, 300)
+	vampiro.global_position = Vector2(-200, -100)
 
 	vampiro.establecer_camino([
-		Vector2(900, 300),
-		Vector2(900, 600),
-		Vector2(600, 600),
-		Vector2(600, 100),
+		Vector2(200, -100),
+		Vector2(200, 0),
+		Vector2(-200, 0),
+		Vector2(-200, 100),
 		Vector2(200, 100),
-		Vector2(200, 300),
-		Vector2(100, 300),
 	])
