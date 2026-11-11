@@ -1,26 +1,32 @@
 [gd_scene format=3 uid="uid://dd3go2r6bhgp8"]
 
-[ext_resource type="SpriteFrames" uid="uid://cnoog46da1x16" path="res://scenes/personajes/enemigos/slime/sprite_frames_slime.tres" id="1_dj03l"]
+[ext_resource type="PackedScene" uid="uid://8l8ksnnfrfh3" path="res://scenes/personajes/enemigos/enemigo.tscn" id="1_dj03l"]
+[ext_resource type="SpriteFrames" uid="uid://cnoog46da1x16" path="res://scenes/personajes/enemigos/slime/sprite_frames_slime.tres" id="2_1nq2p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_24n7q"]
-size = Vector2(36, 22)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evc0i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jtki"]
-size = Vector2(36, 22)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu27u"]
 
-[node name="slime" type="CharacterBody2D" unique_id=607839362]
+[node name="Slime" unique_id=201571986 instance=ExtResource("1_dj03l")]
+velocidad_base = 100.0
+vida_base = 30.0
+animaciones = ExtResource("2_1nq2p")
+prefijo_movimiento = "mov"
+prefijo_muerte = "muer"
+prefijo_ataque = "atac"
+alcance_ataque = 48.0
+intervalo_ataque = 0.5
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1977576331]
-sprite_frames = ExtResource("1_dj03l")
-animation = &"mov_E"
-frame_progress = 0.10182283
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1882333181]
+sprite_frames = ExtResource("2_1nq2p")
+animation = &"atac_O"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=405819417]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_24n7q")
+[node name="CollisionShape2D" parent="." index="1" unique_id=867448430]
+shape = SubResource("RectangleShape2D_evc0i")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=943132675]
+[node name="BarraVida" parent="." index="2" unique_id=995596039]
+offset_top = -16.0
+offset_bottom = -12.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1370368137]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_7jtki")
+[node name="CollisionShape2D" parent="AreaDano" parent_id_path=PackedInt32Array(718930377) index="0" unique_id=374997666]
+shape = SubResource("RectangleShape2D_yu27u")

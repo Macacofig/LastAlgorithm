@@ -1,27 +1,36 @@
 [gd_scene format=3 uid="uid://bxfmsymnx5lor"]
 
-[ext_resource type="SpriteFrames" uid="uid://simlnlo4dvri" path="res://scenes/personajes/enemigos/orco/sprite_frames_orco.tres" id="1_7lma3"]
+[ext_resource type="PackedScene" uid="uid://8l8ksnnfrfh3" path="res://scenes/personajes/enemigos/enemigo.tscn" id="1_7lma3"]
+[ext_resource type="SpriteFrames" uid="uid://simlnlo4dvri" path="res://scenes/personajes/enemigos/orco/sprite_frames_orco.tres" id="2_bit75"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlnm4"]
-size = Vector2(28, 29)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hm3b"]
+size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1amwh"]
-size = Vector2(28, 29)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k18pd"]
+size = Vector2(32, 32)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1885225143]
+[node name="Orco" unique_id=201571986 instance=ExtResource("1_7lma3")]
+velocidad_base = 80.0
+vida_base = 150.0
+comportamiento = 1
+animaciones = ExtResource("2_bit75")
+prefijo_movimiento = "mov"
+prefijo_muerte = "muer"
+prefijo_ataque = "atac"
+dano = 20.0
+alcance_ataque = 48.0
+intervalo_ataque = 3.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75693476]
-sprite_frames = ExtResource("1_7lma3")
-animation = &"muer_S"
-frame = 4
-frame_progress = 0.7787174
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1882333181]
+sprite_frames = ExtResource("2_bit75")
+animation = &"atac_S"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557094745]
-position = Vector2(0, -4.5)
-shape = SubResource("RectangleShape2D_xlnm4")
+[node name="CollisionShape2D" parent="." index="1" unique_id=867448430]
+shape = SubResource("RectangleShape2D_3hm3b")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=477704914]
+[node name="BarraVida" parent="." index="2" unique_id=995596039]
+offset_top = -24.0
+offset_bottom = -20.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1182513653]
-position = Vector2(0, -4.5)
-shape = SubResource("RectangleShape2D_1amwh")
+[node name="CollisionShape2D" parent="AreaDano" parent_id_path=PackedInt32Array(718930377) index="0" unique_id=374997666]
+shape = SubResource("RectangleShape2D_k18pd")
