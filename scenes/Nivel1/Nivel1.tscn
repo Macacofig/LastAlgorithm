@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://w6j0jnd84l1d" path="res://scenes/Nivel1/nivel_1.gd" id="1_ocf45"]
 [ext_resource type="PackedScene" uid="uid://bpkio7d48bnvg" path="res://scenes/Bordes/bordes.tscn" id="1_rqk8m"]
+[ext_resource type="PackedScene" uid="uid://d55wjxped0g1" path="res://scenes/Relleno/relleno.tscn" id="1_xam0y"]
 [ext_resource type="PackedScene" uid="uid://c4a5r68pglio0" path="res://scenes/personajes/enemigos/vampiro/vampiro.tscn" id="2_1488l"]
 [ext_resource type="TileSet" uid="uid://dkykml4ixrfa6" path="res://assetsWorks/Tails/Tails1.tres" id="2_elyks"]
 [ext_resource type="Script" uid="uid://vfnam4ttfg35" path="res://scenes/Nivel1/dummy_torret_wall.gd" id="5_1488l"]
