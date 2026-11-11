@@ -10,6 +10,13 @@
 > TileSet (down bar) -> Seleccionar -> Seleccionar unaa Tile -> Physics
 
 ### CharacterBody2d : Trabajo con objetos animados (Jugador, Monstruos)
+- Se puede utilizar con movimiento (AnimatedSprite2D)
+> Para un primero usamos new SpriteFrames -> Lo guardamos (preferible en la misma carpeta del character)
+- Se debe agregar animaciones respecto a movimientos (Caminar, Estatico (siempre) , Saltar)
+> Seleccionar SpiteFrame -> Animaciones (default) -> Cambiar Nombre -> Rejilla (Agrega sprites para animacion)
+
+Nota : Para 2D pixel art se prefiere que Texture Filter este en Nearest
+> Proyect -> Proyect Settings -> Rendering -> Textureres -> Default Texture Fitlers
 
 ## Arquitectura
 
