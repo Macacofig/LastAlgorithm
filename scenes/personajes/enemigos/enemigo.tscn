@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://8l8ksnnfrfh3"]
+
+[ext_resource type="Script" uid="uid://dp7dwjsi0lpxj" path="res://scenes/personajes/enemigos/enemigo.gd" id="1_duewo"]
+
+[node name="enemigo" type="CharacterBody2D" unique_id=201571986]
+script = ExtResource("1_duewo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1882333181]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=867448430]
+
+[node name="BarraVida" type="ProgressBar" parent="." unique_id=995596039]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="AreaDano" type="Area2D" parent="." unique_id=718930377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=374997666]
