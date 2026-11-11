@@ -17,7 +17,17 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="enemigo" type="CharacterBody2D" unique_id=201571986]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_duewo")
+velocidad_base = null
+vida_base = null
+prefijo_movimiento = null
+prefijo_muerte = null
+prefijo_ataque = null
+dano = null
+alcance_ataque = null
+intervalo_ataque = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1882333181]
 
@@ -42,6 +52,15 @@ rounded = true
 show_percentage = false
 
 [node name="AreaDano" type="Area2D" parent="." unique_id=718930377]
+collision_layer = 128
+collision_mask = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=374997666]
 debug_color = Color(1, 0.13725491, 0.13725491, 0.41960785)
+
+[node name="AreaDeteccion" type="Area2D" parent="." unique_id=1828819239]
+collision_layer = 0
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion" unique_id=335266106]
+debug_color = Color(0.71281946, 0.2607086, 1, 0.41960785)

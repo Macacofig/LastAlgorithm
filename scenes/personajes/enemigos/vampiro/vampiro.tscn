@@ -13,7 +13,15 @@ size = Vector2(22, 36)
 velocidad_base = 240.0
 vida_base = 50.0
 animaciones = ExtResource("2_0kllh")
-prefijo_animacion_movimiento = "vuel"
+prefijo_movimiento = "vuel"
+prefijo_muerte = "muer"
+prefijo_ataque = "atac"
+alcance_ataque = 96.0
+intervalo_ataque = 3.0
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1882333181]
+sprite_frames = ExtResource("2_0kllh")
+animation = &"muer_S"
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=867448430]
 position = Vector2(0, -7)
