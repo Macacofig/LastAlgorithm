@@ -13,6 +13,11 @@ const SUFIJOS: Dictionary = {
 	Orientacion.OESTE: "O",
 }
 
+enum Comportamiento {
+	NORMAL,
+	ASEDIO,
+}
+
 enum EstadoEnemigo {
 	MOVIENDOSE,
 	ATACANDO,
@@ -29,6 +34,7 @@ enum Orientacion {
 @export_group("Atributos")
 @export var velocidad_base: float = 120.0
 @export var vida_base: float = 100.0
+@export var comportamiento: Comportamiento = Comportamiento.NORMAL
 @export_group("Animaciones")
 @export var animaciones: SpriteFrames
 @export var prefijo_movimiento: String
@@ -106,10 +112,20 @@ func _physics_process(delta: float) -> void:
 	if tiempo_ataque_restante > 0.0:
 		tiempo_ataque_restante = maxf(tiempo_ataque_restante - delta, 0.0)
 
-	if tiempo_ataque_restante <= 0.0:
-		objetivo = _obtener_objetivo_cercano()
+	if comportamiento == Comportamiento.ASEDIO:
+		if not is_instance_valid(objetivo):
+			objetivo = _obtener_objetivo_cercano()
 
 		if is_instance_valid(objetivo):
+			velocity = Vector2.ZERO
+			if tiempo_ataque_restante <= 0.0:
+				_atacar_objetivo()
+
+			return
+
+	else:
+		objetivo = _obtener_objetivo_cercano()
+		if is_instance_valid(objetivo) and tiempo_ataque_restante <= 0.0:
 			_atacar_objetivo()
 			return
 
@@ -278,4 +294,6 @@ func _al_animacion_finalizada() -> void:
 
 	if reproduciendo_ataque:
 		reproduciendo_ataque = false
-		_reproducir(animaciones_movimiento, true)
+
+		if comportamiento == Comportamiento.NORMAL:
+			_reproducir(animaciones_movimiento, true)
