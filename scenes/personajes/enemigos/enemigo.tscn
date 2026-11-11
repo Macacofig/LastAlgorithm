@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://8l8ksnnfrfh3"]
+
+[ext_resource type="Script" uid="uid://dp7dwjsi0lpxj" path="res://scenes/personajes/enemigos/enemigo.gd" id="1_duewo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_608p3"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sfxg"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="enemigo" type="CharacterBody2D" unique_id=201571986]
+script = ExtResource("1_duewo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1882333181]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=867448430]
+
+[node name="BarraVida" type="ProgressBar" parent="." unique_id=995596039]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -2.0
+offset_right = 8.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 1
+offset_transform_rotation = 1.5707964
+theme_override_styles/background = SubResource("StyleBoxFlat_608p3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5sfxg")
+rounded = true
+show_percentage = false
+
+[node name="AreaDano" type="Area2D" parent="." unique_id=718930377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=374997666]
+debug_color = Color(1, 0.13725491, 0.13725491, 0.41960785)

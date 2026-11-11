@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c4a5r68pglio0"]
+
+[ext_resource type="PackedScene" uid="uid://8l8ksnnfrfh3" path="res://scenes/personajes/enemigos/enemigo.tscn" id="1_wd2d5"]
+[ext_resource type="SpriteFrames" uid="uid://cf0rh607a74xr" path="res://scenes/personajes/enemigos/vampiro/sprite_frames_vampiro.tres" id="2_0kllh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duewo"]
+size = Vector2(22, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60pne"]
+size = Vector2(22, 36)
+
+[node name="enemigo" unique_id=201571986 instance=ExtResource("1_wd2d5")]
+velocidad_base = 240.0
+vida_base = 50.0
+animaciones = ExtResource("2_0kllh")
+prefijo_animacion_movimiento = "vuel"
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=867448430]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_duewo")
+
+[node name="BarraVida" parent="." index="2" unique_id=995596039]
+offset_left = -16.0
+offset_top = -30.0
+offset_right = 16.0
+offset_bottom = -26.0
+
+[node name="CollisionShape2D" parent="AreaDano" parent_id_path=PackedInt32Array(718930377) index="0" unique_id=374997666]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_60pne")

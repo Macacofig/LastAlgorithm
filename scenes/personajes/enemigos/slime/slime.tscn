@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dd3go2r6bhgp8"]
+
+[ext_resource type="SpriteFrames" uid="uid://cnoog46da1x16" path="res://scenes/personajes/enemigos/slime/sprite_frames_slime.tres" id="1_dj03l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24n7q"]
+size = Vector2(36, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jtki"]
+size = Vector2(36, 22)
+
+[node name="slime" type="CharacterBody2D" unique_id=607839362]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1977576331]
+sprite_frames = ExtResource("1_dj03l")
+animation = &"mov_E"
+frame_progress = 0.10182283
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=405819417]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_24n7q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=943132675]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1370368137]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7jtki")

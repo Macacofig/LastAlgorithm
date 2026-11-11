@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://th0t5rsueevy"]
+
+[ext_resource type="SpriteFrames" uid="uid://5kjbwo3oi0a8" path="res://scenes/personajes/enemigos/planta/sprite_frames_planta.tres" id="1_5makv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uv75j"]
+size = Vector2(30, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c7ux"]
+size = Vector2(30, 34)
+
+[node name="planta" type="CharacterBody2D" unique_id=723948999]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1868096341]
+sprite_frames = ExtResource("1_5makv")
+animation = &"mov_N"
+frame_progress = 0.9994292
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1063100855]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_uv75j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=30135475]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1109603353]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_0c7ux")
