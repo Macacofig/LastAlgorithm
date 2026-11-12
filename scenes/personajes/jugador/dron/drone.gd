@@ -4,6 +4,7 @@ extends Area2D
 @export var velocidad: float = 150.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var area_escaneo: AreaEscaner = $AreaEscaner
 
 enum AccionesDron {
 	PARAR,
@@ -18,6 +19,30 @@ var objetivo: Vector2
 var en_movimiento: bool = false
 
 
+func _ready() -> void:
+	area_escaneo.escaneo_completado.connect(_on_escaneo_completado)
+
+	print("[DRONE] Señal de escaneo conectada")
+
+
+#func _on_escaneo_completado(coordenadas: Array[Vector2i]) -> void:
+	#cambiar_accion(AccionesDron.PARAR)
+#
+	#print("Escaneo completado: ", coordenadas.size())
+#
+	#for celda in coordenadas:
+		#print("Mineral en: ", celda)
+
+func _on_escaneo_completado(coordenadas: Array[Vector2i]) -> void:
+	print("[DRONE] Señal recibida")
+	print("[DRONE] Minerales detectados: ", coordenadas.size())
+
+	for celda in coordenadas:
+		print("[DRONE] Coordenada: ", celda)
+
+	cambiar_accion(AccionesDron.PARAR)
+
+
 func cambiar_accion(nueva_accion: AccionesDron) -> void:
 	if accion_actual == nueva_accion:
 		return
@@ -29,16 +54,17 @@ func cambiar_accion(nueva_accion: AccionesDron) -> void:
 func escanear() -> void:
 	en_movimiento = false
 	cambiar_accion(AccionesDron.ESCANEAR)
+	area_escaneo.iniciar_escaneo()
 
 
-func explorar(position: Vector2) -> void:
-	objetivo = position
+func explorar(lugar: Vector2) -> void:
+	objetivo = lugar
 	en_movimiento = true
 	cambiar_accion(AccionesDron.EXPLORAR)
 
 
-func mover(position: Vector2) -> void:
-	objetivo = position
+func mover(lugar: Vector2) -> void:
+	objetivo = lugar
 	en_movimiento = true
 	cambiar_accion(AccionesDron.MOVER)
 

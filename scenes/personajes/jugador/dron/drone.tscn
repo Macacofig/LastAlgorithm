@@ -2,6 +2,7 @@
 
 [ext_resource type="SpriteFrames" uid="uid://cp18ottibgr1a" path="res://scenes/personajes/jugador/dron/sprite_frames_dron.tres" id="1_ss6l4"]
 [ext_resource type="Script" uid="uid://jihcn4fax5mm" path="res://scenes/personajes/jugador/dron/drone.gd" id="1_vvsw0"]
+[ext_resource type="Script" uid="uid://f34md6uo5h2k" path="res://scenes/personajes/jugador/dron/area_escaner.gd" id="3_ikmu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jtki"]
 size = Vector2(30, 30)
@@ -26,6 +27,10 @@ debug_color = Color(0.9711737, 0, 0.45298088, 0.41960785)
 [node name="AreaEscaner" type="Area2D" parent="." unique_id=799625080]
 collision_layer = 0
 collision_mask = 32
+monitoring = false
+script = ExtResource("3_ikmu3")
+duracion_escaneo = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscaner" unique_id=665452433]
+visible = false
 shape = SubResource("CircleShape2D_7jtki")
