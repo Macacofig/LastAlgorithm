@@ -29,7 +29,7 @@ collision_layer = 0
 collision_mask = 32
 monitoring = false
 script = ExtResource("3_ikmu3")
-duracion_escaneo = 1.5
+duracion_escaneo = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscaner" unique_id=665452433]
 visible = false

@@ -1,10 +1,8 @@
-
 class_name AreaEscaner
 extends Area2D
 
 signal escaneo_completado(coordenadas: Array[Vector2i])
 
-@export var mapa_minerales: TileMapLayer
 @export var duracion_escaneo: float = 1.0
 
 var coordenadas_detectadas: Array[Vector2i] = []
@@ -14,7 +12,6 @@ func _ready() -> void:
 	body_shape_entered.connect(_on_body_shape_entered)
 
 	print("[ESCANER] Inicializado")
-	print("[ESCANER] Mapa asignado: ", mapa_minerales)
 
 
 func iniciar_escaneo() -> void:
@@ -48,15 +45,15 @@ func _on_body_shape_entered(
 	_local_shape_index: int
 ) -> void:
 
-	print("[ESCANER] Colisión detectada: ", body.name)
-
-	if body != mapa_minerales:
-		print("[ESCANER] El cuerpo no es el mapa de minerales")
+	if not body is TileMapLayer:
 		return
 
-	var celda := mapa_minerales.get_coords_for_body_rid(body_rid)
+	if not body.is_in_group("mapas_minerales"):
+		return
 
-	print("[ESCANER] Celda detectada: ", celda)
+	var mapa := body as TileMapLayer
+	var celda := mapa.get_coords_for_body_rid(body_rid)
 
 	if not coordenadas_detectadas.has(celda):
 		coordenadas_detectadas.append(celda)
+		print("[ESCANER] Mineral detectado en: ", celda)
