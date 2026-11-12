@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://bbeqs0tdkyds1"]
+
+[ext_resource type="Script" uid="uid://c6evui4x5k1ee" path="res://scenes/ui/editor/editor.gd" id="1_llapt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtfo6"]
+bg_color = Color(0.20392157, 0.23137255, 0.2784314, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b664h"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.09019608, 0.105882354, 0.13333334, 0.78431374)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_704kr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_llapt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gapq"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.20392157, 0.48235294, 0.32156864, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.31, 0.36, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kb2sg"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.31764707, 0.34901962, 0.4, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.31, 0.36, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1069168590]
+
+[node name="Editor" type="Control" parent="." unique_id=868201282]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_llapt")
+
+[node name="BotonAbrir" type="Button" parent="Editor" unique_id=1507506954]
+custom_minimum_size = Vector2(80, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.35
+anchor_top = 5.65
+anchor_right = -2.35
+anchor_bottom = 6.45
+text = "Codigo"
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelEditor" type="PanelContainer" parent="Editor" unique_id=999521692]
+visible = false
+custom_minimum_size = Vector2(420, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -250.0
+offset_right = 210.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtfo6")
+
+[node name="MarginContainer" type="MarginContainer" parent="Editor/PanelEditor" unique_id=961130949]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Editor/PanelEditor/MarginContainer" unique_id=270914718]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Editor/PanelEditor/MarginContainer/VBoxContainer" unique_id=902574564]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+text = "Codigo Dron"
+
+[node name="InputCodigo" type="TextEdit" parent="Editor/PanelEditor/MarginContainer/VBoxContainer" unique_id=42459096]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.6627451, 0.7764706, 0.9098039, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_b664h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_704kr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Editor/PanelEditor/MarginContainer/VBoxContainer" unique_id=247286360]
+layout_mode = 2
+alignment = 1
+
+[node name="BotonEjecutar" type="Button" parent="Editor/PanelEditor/MarginContainer/VBoxContainer/HBoxContainer" unique_id=732685123]
+custom_minimum_size = Vector2(80, 32)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = SubResource("Theme_llapt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gapq")
+text = "Ejecutar"
+
+[node name="BotonCerrar" type="Button" parent="Editor/PanelEditor/MarginContainer/VBoxContainer/HBoxContainer" unique_id=445422341]
+custom_minimum_size = Vector2(80, 32)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_kb2sg")
+text = "Cerrar"
