@@ -113,16 +113,16 @@ func _physics_process(delta: float) -> void:
 		tiempo_ataque_restante = maxf(tiempo_ataque_restante - delta, 0.0)
 
 	if comportamiento == Comportamiento.ASEDIO:
-		if not is_instance_valid(objetivo):
+		if not _objetivo_es_valido():
 			objetivo = _obtener_objetivo_cercano()
 
 		if is_instance_valid(objetivo):
 			velocity = Vector2.ZERO
+
 			if tiempo_ataque_restante <= 0.0:
 				_atacar_objetivo()
 
 			return
-
 	else:
 		objetivo = _obtener_objetivo_cercano()
 		if is_instance_valid(objetivo) and tiempo_ataque_restante <= 0.0:
@@ -297,3 +297,12 @@ func _al_animacion_finalizada() -> void:
 
 		if comportamiento == Comportamiento.NORMAL:
 			_reproducir(animaciones_movimiento, true)
+
+func _objetivo_es_valido() -> bool:
+	if not is_instance_valid(objetivo):
+		return false
+
+	if not objetivo.is_in_group("jugador") and not objetivo.is_in_group("torretas"):
+		return false
+
+	return true
