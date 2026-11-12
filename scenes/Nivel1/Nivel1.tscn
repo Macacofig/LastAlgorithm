@@ -3,22 +3,27 @@
 [ext_resource type="Script" uid="uid://w6j0jnd84l1d" path="res://scenes/Nivel1/nivel_1.gd" id="1_ocf45"]
 [ext_resource type="PackedScene" uid="uid://bpkio7d48bnvg" path="res://scenes/Bordes/bordes.tscn" id="1_rqk8m"]
 [ext_resource type="PackedScene" uid="uid://d55wjxped0g1" path="res://scenes/Relleno/relleno.tscn" id="1_xam0y"]
-[ext_resource type="PackedScene" uid="uid://c4a5r68pglio0" path="res://scenes/personajes/enemigos/vampiro/vampiro.tscn" id="2_1488l"]
 [ext_resource type="TileSet" uid="uid://dkykml4ixrfa6" path="res://assetsWorks/Tails/Tails1.tres" id="2_elyks"]
 [ext_resource type="Script" uid="uid://vfnam4ttfg35" path="res://scenes/Nivel1/dummy_torret_wall.gd" id="5_1488l"]
+[ext_resource type="TileSet" uid="uid://dtx1yp2rkyo4s" path="res://assetsWorks/minerals/VioletCristal50.tres" id="7_rbuju"]
+[ext_resource type="PackedScene" uid="uid://bxfmsymnx5lor" path="res://scenes/personajes/enemigos/orco/orco.tscn" id="8_rrvuq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jtki"]
 size = Vector2(48, 64)
 
 [node name="Node2D" type="Node2D" unique_id=1923624951]
 script = ExtResource("1_ocf45")
-vampiro_escena = ExtResource("2_1488l")
+orco_escena = ExtResource("8_rrvuq")
 
 [node name="Bordes" parent="." unique_id=1969861559 instance=ExtResource("1_rqk8m")]
 tile_map_data = PackedByteArray("AADw/wAAAAABABcAAAAPAAAAAAAEABcAAAD//wkAAAACABgAAAD///b/AAACABUAAADw//b/AAABABUAAAAPAPb/AAAEABUAAAAPAAkAAAAEABgAAADw/wkAAAABABgAAADw/wcAAAABABYAAADw/wgAAAABABcAAADw/wUAAAABABYAAADw/wYAAAABABcAAADw/wMAAAABABYAAADw/wQAAAABABcAAADw/wEAAAABABYAAADw/wIAAAABABcAAADw////AAABABYAAADw//3/AAABABYAAADw//7/AAABABcAAADw//v/AAABABYAAADw//z/AAABABcAAADw//n/AAABABYAAADw//r/AAABABcAAADw//f/AAABABYAAADw//j/AAABABcAAADx//b/AAACABUAAADy//b/AAADABUAAADz//b/AAACABUAAAD0//b/AAADABUAAAD1//b/AAACABUAAAD2//b/AAADABUAAAD3//b/AAACABUAAAD4//b/AAADABUAAAD5//b/AAACABUAAAD6//b/AAADABUAAAD7//b/AAACABUAAAD8//b/AAADABUAAAD9//b/AAACABUAAAD+//b/AAADABUAAAAAAPb/AAADABUAAAABAPb/AAACABUAAAACAPb/AAADABUAAAADAPb/AAACABUAAAAEAPb/AAADABUAAAAFAPb/AAACABUAAAAGAPb/AAADABUAAAAHAPb/AAACABUAAAAIAPb/AAADABUAAAAJAPb/AAACABUAAAAKAPb/AAADABUAAAALAPb/AAACABUAAAAMAPb/AAADABUAAAANAPb/AAACABUAAAAOAPb/AAADABUAAAAPAPf/AAAEABYAAAAPAPj/AAAEABcAAAAPAPn/AAAEABYAAAAPAPr/AAAEABcAAAAPAPv/AAAEABYAAAAPAPz/AAAEABcAAAAPAP3/AAAEABYAAAAPAP7/AAAEABcAAAAPAP//AAAEABYAAAAPAAEAAAAEABYAAAAPAAIAAAAEABcAAAAPAAMAAAAEABYAAAAPAAQAAAAEABcAAAAPAAUAAAAEABYAAAAPAAYAAAAEABcAAAAPAAcAAAAEABYAAAAPAAgAAAAEABcAAAANAAkAAAACABgAAAAOAAkAAAADABgAAAALAAkAAAACABgAAAAMAAkAAAADABgAAAAJAAkAAAACABgAAAAKAAkAAAADABgAAAAHAAkAAAACABgAAAAIAAkAAAADABgAAAAFAAkAAAACABgAAAAGAAkAAAADABgAAAADAAkAAAACABgAAAAEAAkAAAADABgAAAABAAkAAAACABgAAAACAAkAAAADABgAAAAAAAkAAAADABgAAAD9/wkAAAACABgAAAD+/wkAAAADABgAAAD7/wkAAAACABgAAAD8/wkAAAADABgAAAD5/wkAAAACABgAAAD6/wkAAAADABgAAAD3/wkAAAACABgAAAD4/wkAAAADABgAAAD1/wkAAAACABgAAAD2/wkAAAADABgAAADz/wkAAAACABgAAAD0/wkAAAADABgAAADx/wkAAAACABgAAADy/wkAAAADABgAAAA=")
 tile_set = ExtResource("2_elyks")
 
 [node name="Relleno" parent="." unique_id=1957348138 instance=ExtResource("1_xam0y")]
+
+[node name="Minerales" type="TileMapLayer" parent="." unique_id=697961845]
+tile_map_data = PackedByteArray("AAD4/wAAAAAAAAAAAAD4//7/AAAAAAAAAAA=")
+tile_set = ExtResource("7_rbuju")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1285924988]
 position = Vector2(0, -186)
