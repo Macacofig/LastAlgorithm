@@ -47,3 +47,15 @@ res
 |   6   |	minerales	    |   Recursos recolectables          |
 |   7   |	proyectiles	    |   Balas de las torretas           |
 |   8   |	hitbox_enemigo  |   El AreaDano del enemigo         |
+
+## ControladorDSL
+Este nodo debe estar en el mismo nivel que EditorCodigo (CanvasLayer), esto porque busca al elemento de UI por ruta: `$"../EditorCodigo/Editor"`
+
+Escena (Nodo raiz)
+|
+--> EditorCodigo (CanvasLayer, escena reutilizable)
+|
+--> ControladorDSL (Nodo que solo aloja al script para el dsl)
+
+Tambien es importante asignar al dron en las propiedaes de ControladorDSL desde el inspector
+El dron puede estar a cualquier nivel, siempre y cuando se lo referencie en la propiedad del Nodo ControladorDSL con el script `controlador_dsl.gd`
