@@ -59,3 +59,13 @@ Escena (Nodo raiz)
 
 Tambien es importante asignar al dron en las propiedaes de ControladorDSL desde el inspector
 El dron puede estar a cualquier nivel, siempre y cuando se lo referencie en la propiedad del Nodo ControladorDSL con el script `controlador_dsl.gd`
+
+## DSL Actual
+Se usa un estilo similar o identico a python:
+
+| Nombre | Parametros | Que hace |
+| --- | --- | --- |
+| mover(x, y) | x: int, y: int | mueve el dron a la posicion x,y |
+| explorar(x, y) | x: int, y: int | mueve el dron a la posicion x,y con animacion de explorar |
+| escanear() | ninguno | detiene el dron y cambia a la animacion de explorar |
+| parar() | ninguno | detiene el dron y cambia a la animacion de parar |
