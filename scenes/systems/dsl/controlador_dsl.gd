@@ -2,14 +2,13 @@ extends Node
 
 @export var dron: Node
 
-@onready var editor = $"../EditorCodigo/Editor"
+@onready var editor = $"../CanvasEditor/Editor"
 
 var parser: DSLParser
 var ejecutor: DSLEjecutor
 
 func _ready() -> void:
 	parser = DSLParser.new()
-
 	ejecutor = DSLEjecutor.new()
 	add_child(ejecutor)
 
