@@ -9,7 +9,7 @@
 [node name="Pruebas" type="Node2D" unique_id=531669134]
 script = ExtResource("1_sfwt1")
 
-[node name="EditorCodigo" parent="." unique_id=1069168590 instance=ExtResource("2_54ju2")]
+[node name="CanvasEditor" parent="." unique_id=1069168590 instance=ExtResource("2_54ju2")]
 offset = Vector2(-150, 50)
 transform = Transform2D(1, 0, 0, 1, -150, 50)
 

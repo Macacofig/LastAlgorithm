@@ -6,8 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jtki"]
 size = Vector2(30, 30)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jtki"]
+radius = 100.0
+
 [node name="Drone" type="Area2D" unique_id=1167517549]
-scale = Vector2(1.5, 1.5)
 collision_layer = 4
 collision_mask = 33
 script = ExtResource("1_vvsw0")
@@ -20,3 +22,10 @@ frame_progress = 0.65469456
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=547621303]
 shape = SubResource("RectangleShape2D_7jtki")
 debug_color = Color(0.9711737, 0, 0.45298088, 0.41960785)
+
+[node name="AreaEscaner" type="Area2D" parent="." unique_id=799625080]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscaner" unique_id=665452433]
+shape = SubResource("CircleShape2D_7jtki")

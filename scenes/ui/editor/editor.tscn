@@ -54,7 +54,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1069168590]
+[node name="CanvasEditor" type="CanvasLayer" unique_id=1069168590]
+follow_viewport_enabled = true
 
 [node name="Editor" type="Control" parent="." unique_id=868201282]
 layout_mode = 3

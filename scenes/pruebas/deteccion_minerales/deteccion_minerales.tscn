@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://d31130btje3e4"]
+
+[ext_resource type="PackedScene" uid="uid://bpkio7d48bnvg" path="res://scenes/Bordes/bordes.tscn" id="3_uklrt"]
+[ext_resource type="TileSet" uid="uid://dkykml4ixrfa6" path="res://assetsWorks/Tails/Tails1.tres" id="4_noyd8"]
+[ext_resource type="PackedScene" uid="uid://d55wjxped0g1" path="res://scenes/Relleno/relleno.tscn" id="5_wtup1"]
+[ext_resource type="TileSet" uid="uid://dtx1yp2rkyo4s" path="res://assetsWorks/minerals/VioletCristal50.tres" id="6_oceo7"]
+[ext_resource type="PackedScene" uid="uid://x67mw7sd477x" path="res://scenes/systems/dsl/controlador_dsl.tscn" id="6_uklrt"]
+[ext_resource type="PackedScene" uid="uid://d2qg4ou1ust0o" path="res://scenes/personajes/jugador/dron/drone.tscn" id="7_l5h0w"]
+[ext_resource type="Script" uid="uid://5mu6tnp2x743" path="res://scenes/systems/dsl/controlador_dsl.gd" id="7_noyd8"]
+[ext_resource type="PackedScene" uid="uid://bbeqs0tdkyds1" path="res://scenes/ui/editor/editor.tscn" id="8_wtup1"]
+
+[node name="Node2D" type="Node2D" unique_id=1923624951]
+
+[node name="Bordes" parent="." unique_id=1969861559 instance=ExtResource("3_uklrt")]
+tile_map_data = PackedByteArray("AADw/wAAAAABABcAAAAPAAAAAAAEABcAAAD//wkAAAACABgAAAD///b/AAACABUAAADw//b/AAABABUAAAAPAPb/AAAEABUAAAAPAAkAAAAEABgAAADw/wkAAAABABgAAADw/wcAAAABABYAAADw/wgAAAABABcAAADw/wUAAAABABYAAADw/wYAAAABABcAAADw/wMAAAABABYAAADw/wQAAAABABcAAADw/wEAAAABABYAAADw/wIAAAABABcAAADw////AAABABYAAADw//3/AAABABYAAADw//7/AAABABcAAADw//v/AAABABYAAADw//z/AAABABcAAADw//n/AAABABYAAADw//r/AAABABcAAADw//f/AAABABYAAADw//j/AAABABcAAADx//b/AAACABUAAADy//b/AAADABUAAADz//b/AAACABUAAAD0//b/AAADABUAAAD1//b/AAACABUAAAD2//b/AAADABUAAAD3//b/AAACABUAAAD4//b/AAADABUAAAD5//b/AAACABUAAAD6//b/AAADABUAAAD7//b/AAACABUAAAD8//b/AAADABUAAAD9//b/AAACABUAAAD+//b/AAADABUAAAAAAPb/AAADABUAAAABAPb/AAACABUAAAACAPb/AAADABUAAAADAPb/AAACABUAAAAEAPb/AAADABUAAAAFAPb/AAACABUAAAAGAPb/AAADABUAAAAHAPb/AAACABUAAAAIAPb/AAADABUAAAAJAPb/AAACABUAAAAKAPb/AAADABUAAAALAPb/AAACABUAAAAMAPb/AAADABUAAAANAPb/AAACABUAAAAOAPb/AAADABUAAAAPAPf/AAAEABYAAAAPAPj/AAAEABcAAAAPAPn/AAAEABYAAAAPAPr/AAAEABcAAAAPAPv/AAAEABYAAAAPAPz/AAAEABcAAAAPAP3/AAAEABYAAAAPAP7/AAAEABcAAAAPAP//AAAEABYAAAAPAAEAAAAEABYAAAAPAAIAAAAEABcAAAAPAAMAAAAEABYAAAAPAAQAAAAEABcAAAAPAAUAAAAEABYAAAAPAAYAAAAEABcAAAAPAAcAAAAEABYAAAAPAAgAAAAEABcAAAANAAkAAAACABgAAAAOAAkAAAADABgAAAALAAkAAAACABgAAAAMAAkAAAADABgAAAAJAAkAAAACABgAAAAKAAkAAAADABgAAAAHAAkAAAACABgAAAAIAAkAAAADABgAAAAFAAkAAAACABgAAAAGAAkAAAADABgAAAADAAkAAAACABgAAAAEAAkAAAADABgAAAABAAkAAAACABgAAAACAAkAAAADABgAAAAAAAkAAAADABgAAAD9/wkAAAACABgAAAD+/wkAAAADABgAAAD7/wkAAAACABgAAAD8/wkAAAADABgAAAD5/wkAAAACABgAAAD6/wkAAAADABgAAAD3/wkAAAACABgAAAD4/wkAAAADABgAAAD1/wkAAAACABgAAAD2/wkAAAADABgAAADz/wkAAAACABgAAAD0/wkAAAADABgAAADx/wkAAAACABgAAADy/wkAAAADABgAAAA=")
+tile_set = ExtResource("4_noyd8")
+
+[node name="Relleno" parent="." unique_id=1957348138 instance=ExtResource("5_wtup1")]
+
+[node name="Minerales" type="TileMapLayer" parent="." unique_id=697961845]
+tile_map_data = PackedByteArray("AAD4/wAAAAAAAAAAAAD4//7/AAAAAAAAAAA=")
+tile_set = ExtResource("6_oceo7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1794715357]
+zoom = Vector2(2.25, 2.05)
+
+[node name="Marker2D" type="Marker2D" parent="Camera2D" unique_id=1285924988]
+
+[node name="Drone" parent="Camera2D/Marker2D" unique_id=1167517549 instance=ExtResource("7_l5h0w")]
+
+[node name="CanvasEditor" parent="Camera2D/Marker2D" unique_id=1069168590 instance=ExtResource("8_wtup1")]
+layer = 5
+offset = Vector2(-400, -100)
+scale = Vector2(0.444, 0.448)
+transform = Transform2D(0.444, 0, 0, 0.448, -400, -100)
+
+[node name="ControladorDSL" parent="Camera2D/Marker2D" unique_id=1913680895 node_paths=PackedStringArray("dron") instance=ExtResource("6_uklrt")]
+script = ExtResource("7_noyd8")
+dron = NodePath("../Drone")
