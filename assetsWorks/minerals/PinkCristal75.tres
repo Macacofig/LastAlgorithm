@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" format=3 uid="uid://cyv6mjm8joyg8"]
+
+[ext_resource type="Texture2D" uid="uid://ky2gh7m18qxv" path="res://assets/minerals/Pink_crystal2.png" id="1_aha4m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71or2"]
+texture = ExtResource("1_aha4m")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -18.5, -20, 20.5, 20, 20.5, 20, -18.5)
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_71or2")

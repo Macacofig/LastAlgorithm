@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" format=3 uid="uid://dx8li1mj0uxmo"]
+
+[ext_resource type="Texture2D" uid="uid://br3ii76se1gwt" path="res://assets/minerals/Green_crystal4.png" id="1_nnu5a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qncgk"]
+texture = ExtResource("1_nnu5a")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6.5, -6, 6.5, 7, 6.5, 7, -6.5)
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_qncgk")

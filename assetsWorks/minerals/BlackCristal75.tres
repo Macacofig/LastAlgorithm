@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" format=3 uid="uid://bn2edlywubrm7"]
+
+[ext_resource type="Texture2D" uid="uid://c5y7kpx3uyhkh" path="res://assets/minerals/Black_crystal2.png" id="1_n8dkx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2ko0"]
+texture = ExtResource("1_n8dkx")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -20, -15, 20, 16, 20, 16, -20)
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_q2ko0")

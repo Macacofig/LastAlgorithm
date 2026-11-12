@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" format=3 uid="uid://cxy5t5txeyjlw"]
+
+[ext_resource type="Texture2D" uid="uid://do8jgsxn40l58" path="res://assets/objects/Bush_red_flowers1.png" id="1_cmgqw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_alcro"]
+texture = ExtResource("1_cmgqw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -18, -20, 19, 19, 19, 19, -18)
+
+[resource]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_alcro")
