@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://iaaxr2cwtltp"]
+
+[ext_resource type="PackedScene" uid="uid://d55wjxped0g1" path="res://scenes/Relleno/relleno.tscn" id="1_dka4w"]
+[ext_resource type="Script" uid="uid://2ldk68q2asko" path="res://scenes/pruebas/pruebas_dron.gd" id="1_sfwt1"]
+[ext_resource type="PackedScene" uid="uid://d2qg4ou1ust0o" path="res://scenes/personajes/jugador/dron/drone.tscn" id="3_54ju2"]
+
+[node name="Pruebas" type="Node2D" unique_id=531669134]
+script = ExtResource("1_sfwt1")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1119399485]
+position = Vector2(576, 324)
+
+[node name="Relleno" parent="Marker2D" unique_id=1957348138 instance=ExtResource("1_dka4w")]
+scale = Vector2(2.5, 2.5)
+
+[node name="Camera2D" type="Camera2D" parent="Marker2D" unique_id=1263192465]
+
+[node name="Drone" parent="Marker2D" unique_id=1167517549 instance=ExtResource("3_54ju2")]
+position = Vector2(-489, -257)
+velocidad = 300.0

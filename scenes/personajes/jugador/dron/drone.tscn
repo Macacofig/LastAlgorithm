@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2qg4ou1ust0o"]
+
+[ext_resource type="SpriteFrames" uid="uid://cp18ottibgr1a" path="res://scenes/personajes/jugador/dron/sprite_frames_dron.tres" id="1_ss6l4"]
+[ext_resource type="Script" uid="uid://jihcn4fax5mm" path="res://scenes/personajes/jugador/dron/drone.gd" id="1_vvsw0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jtki"]
+size = Vector2(30, 30)
+
+[node name="Drone" type="Area2D" unique_id=1167517549]
+scale = Vector2(1.5, 1.5)
+collision_layer = 4
+collision_mask = 33
+script = ExtResource("1_vvsw0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1531350768]
+sprite_frames = ExtResource("1_ss6l4")
+animation = &"parar"
+frame_progress = 0.65469456
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=547621303]
+shape = SubResource("RectangleShape2D_7jtki")
+debug_color = Color(0.9711737, 0, 0.45298088, 0.41960785)
